@@ -28,6 +28,21 @@ generate_normalization_plots <- function(raw_counts_matrix,norm_counts_matrix,no
 	return(plotList)
 }
 
+generate_pca_plots <- function(rld_object) {
+	plotList <- list()
+
+	pcaData <- plotPCA(rld_object, intgroup=c('mito','Ycsome','rep','batch'), returnData=TRUE)
+	percentVar <- round(100*attr(pcaData,"percentVar"))
+
+	plotList[['batch']] <- ggplot(pcaData, aes(x=PC1,y=PC2, color=batch))+geom_point(size=3)+xlab(paste0("PC1: ",percentVar[1],"% Variance"))+ylab(paste0("PC2: ", percentVar[2],"% Variance"))+ggtitle('PCA: Batch')+coord_fixed()
+	plotList[['mito']] <- ggplot(pcaData, aes(x=PC1,y=PC2, color=mito))+geom_point(size=3)+xlab(paste0("PC1: ",percentVar[1],"% Variance"))+ylab(paste0("PC2: ", percentVar[2],"% Variance"))+ggtitle('PCA: Mito')+coord_fixed()+scale_color_manual(values=c("red4","red2","darkorange3",'darkorange','darkgoldenrod1','gold1'))
+	plotList[['Ycsome']] <- ggplot(pcaData, aes(x=PC1,y=PC2, color=Ycsome))+geom_point(size=3)+xlab(paste0("PC1: ",percentVar[1],"% Variance"))+ylab(paste0("PC2: ", percentVar[2],"% Variance"))+ggtitle('PCA: Y')+coord_fixed()+scale_color_manual(values=c("darkgreen","green3","dodgerblue4",'deepskyblue2','purple4','mediumpurple2'))
+	plotList[['mitoY']] <- ggplot(pcaData, aes(x=PC1,y=PC2, color=mito,shape=Ycsome))+geom_point(size=3)+xlab(paste0("PC1: ",percentVar[1],"% Variance"))+ylab(paste0("PC2: ", percentVar[2],"% Variance"))+ggtitle('PCA: Mito-Y')+coord_fixed()+scale_color_manual(values=c("red4","red2","darkorange3",'darkorange','darkgoldenrod1','gold1'))
+
+	return(plotList)
+}
+
+
 #The following function runs 
 #  a GO analysis
 #  to identify over- and under-represented GO terms in the DE results
