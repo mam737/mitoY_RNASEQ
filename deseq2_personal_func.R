@@ -131,15 +131,27 @@ generate_heatmap <- function(vec_of_genes, vec_of_gene_names,rld_obj,orientation
 	breaksList = seq(-1.0,1.0,length.out=100)
 	
 	if (orientation=='mito') {
-		pheatmap(specified_phenotype_mat,cluster_cols=FALSE,labels_row=vec_of_gene_names,breaks=breaksList,fontsize_row=20,fontsize_column=15)
-	}
+		annotation_col <- data.frame(Ycsome = factor(Ycsome),mito = factor(mito))
+		rownames(annotation_col) <- colnames(specified_phenotype_mat)
+		annotation_colors <- list(mito = c(B38='red4',B39='red2',I02 = 'darkorange3',N01='darkorange',N02='darkgoldenrod1',N23='gold1'),
+			Ycsome = c(B04 = 'darkgreen',B11 = 'green3',N03='dodgerblue4',N07='deepskyblue2',ZH23='purple4',ZW139='mediumpurple2'))
 
+		pheatmap(specified_phenotype_mat,cluster_cols=FALSE,labels_row=vec_of_gene_names,breaks=breaksList,show_colname=T,annotation_col=annotation_col,annotation_colors=annotation_colors,fontsize=38,cellwidth=38,cellheight=48)
+	}
 	if (orientation =='Ycsome') {
-		Yor_specified_phenotype_mat <- specified_phenotype_mat[,y_ord]
-		pheatmap(Yor_specified_phenotype_mat,cluster_cols=FALSE,labels_row=vis_gene_names,breaks=breaksList,fontsize_row=20,fontsize_column=15)
+		Y_ord <- c("B38-B04-1-1_A","B38-B04-1-1_B","B39-B04-2-1_A","B39-B04-2-1_B","I02-B04-3-1_A","I02-B04-3-1_B","N01-B04-4-1_A","N01-B04-4-1_B","N02-B04-5-1_A"   ,"N02-B04-5-1_B","N23-B04-6-1_A"   ,"N23-B04-6-1_B","B38-B11-1-2_A"   ,"B38-B11-1-2_B","B39-B11-2-2_A"   ,"B39-B11-2-2_B","I02-B11-3-2_A"   ,"I02-B11-3-2_B","N01-B11-4-2_A"   ,"N01-B11-4-2_B","N02-B11-5-2_A"   ,"N02-B11-5-2_B","N23-B11-6-2_A"   ,"N23-B11-6-2_B","B38-N03-1-3_A"   ,"B38-N03-1-3_B","B39-N03-2-3_A"   ,"B39-N03-2-3_B","I02-N03-3-3_A"   ,"I02-N03-3-3_B","N01-N03-4-3_A"   ,"N01-N03-4-3_B","N02-N03-5-3_A"   ,"N02-N03-5-3_B","N23-N03-6-3_A"   ,"N23-N03-6-3_B","B38-N07-1-4_A"   ,"B38-N07-1-4_B","B39-N07-2-4_A"   ,"B39-N07-2-4_B","I02-N07-3-4_A"   ,"I02-N07-3-4_B","N01-N07-4-4_A"   ,"N01-N07-4-4_B","N02-N07-5-4_A"   ,"N02-N07-5-4_B","N23-N07-6-4_A"   ,"N23-N07-6-4_B","B38-ZH23-1-5_A"  ,"B38-ZH23-1-5_B","B39-ZH23-2-5_A"  ,"B39-ZH23-2-5_B","I02-ZH23-3-5_A"  ,"I02-ZH23-3-5_B","N01-ZH23-4-5_A"  ,"N01-ZH23-4-5_B","N02-ZH23-5-5_A"  ,"N02-ZH23-5-5_B","N23-ZH23-6-5_A"  ,"N23-ZH23-6-5_B","B38-ZW139-1-6_A" ,"B38-ZW139-1-6_B"   ,"B39-ZW139-2-6_A" ,"B39-ZW139-2-6_B"     ,"I02-ZW139-3-6_A" ,"I02-ZW139-3-6_B","N01-ZW139-4-6_A" ,"N01-ZW139-4-6_B","N02-ZW139-5-6_A" ,"N02-ZW139-5-6_B","N23-ZW139-6-6_A" ,"N23-ZW139-6-6_B")
+		Yord_specified_phenotype_mat <- specified_phenotype_mat[,Y_ord]
+		
+		annotation_col <- data.frame(Ycsome = factor(c(rep("B04",12),rep("B11",12),rep("N03",12),rep("N07",12),rep("ZH23",12),rep("ZW139",12))),mito=factor(c(rep(c("B38","B38","B39","B39","I02","I02","N01","N01","N02","N02","N23","N23"),6))))
+		annotation_colors <- list(mito = c(B38='red4',B39='red2',I02 = 'darkorange3',N01='darkorange',N02='darkgoldenrod1',N23='gold1'),
+			Ycsome = c(B04 = 'darkgreen',B11 = 'green3',N03='dodgerblue4',N07='deepskyblue2',ZH23='purple4',ZW139='mediumpurple2'))
+
+		pheatmap(Yord_specified_phenotype_mat,cluster_cols=FALSE,labels_row=vec_of_gene_names,breaks=breaksList,show_colname=T,annotation_col=annotation_col,annotation_colors=annotation_colors,fontsize=38,cellwidth=38,cellheight=48)
 	}
 
 }
+
+
 
 sva_reg_joint_count_plots <- function(regress_mat,gene_id,gene_name,orientation) {
 

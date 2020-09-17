@@ -1,4 +1,3 @@
-> sessionInfo() 
 R version 3.5.0 (2018-04-23)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: CentOS Linux 7 (Core)
@@ -10,84 +9,86 @@ locale:
 [1] C
 
 attached base packages:
-[1] stats4    parallel  stats     graphics  grDevices utils     datasets 
-[8] methods   base     
+[1] stats4    parallel  stats     graphics  grDevices utils     datasets
+[8] methods   base
 
 other attached packages:
- [1] treemap_2.4-2                            
- [2] sva_3.30.1                               
- [3] mgcv_1.8-29                              
- [4] nlme_3.1-141                             
- [5] goseq_1.34.1                             
- [6] geneLenDataBase_1.18.0                   
- [7] BiasedUrn_1.07                           
- [8] gridExtra_2.3                            
- [9] TxDb.Dmelanogaster.UCSC.dm6.ensGene_3.4.4
-[10] GenomicFeatures_1.34.8                   
-[11] pheatmap_1.0.12                          
-[12] reshape2_1.4.3                           
-[13] limma_3.38.3                             
-[14] fdrtool_1.2.15                           
-[15] EDASeq_2.16.3                            
-[16] ShortRead_1.40.0                         
-[17] GenomicAlignments_1.18.1                 
-[18] Rsamtools_1.34.1                         
-[19] Biostrings_2.50.2                        
-[20] XVector_0.22.0                           
-[21] biomaRt_2.38.0                           
-[22] genefilter_1.64.0                        
-[23] topGO_2.34.0                             
-[24] SparseM_1.77                             
-[25] GO.db_3.7.0                              
-[26] graph_1.60.0                             
-[27] RColorBrewer_1.1-2                       
-[28] gplots_3.0.1.1                           
-[29] DESeq2_1.22.2                            
-[30] SummarizedExperiment_1.12.0              
-[31] DelayedArray_0.8.0                       
-[32] BiocParallel_1.16.6                      
-[33] matrixStats_0.55.0                       
-[34] GenomicRanges_1.34.0                     
-[35] GenomeInfoDb_1.18.2                      
-[36] stringr_1.4.0                            
-[37] dplyr_0.8.3                              
-[38] plyr_1.8.4                               
-[39] ggplot2_3.2.1                            
-[40] geneplotter_1.60.0                       
-[41] annotate_1.60.1                          
-[42] XML_3.98-1.20                            
-[43] AnnotationDbi_1.44.0                     
-[44] IRanges_2.16.0                           
-[45] S4Vectors_0.20.1                         
-[46] lattice_0.20-38                          
-[47] Biobase_2.42.0                           
-[48] BiocGenerics_0.28.0                      
+ [1] RcisTarget_1.2.1
+ [2] treemap_2.4-2
+ [3] sva_3.30.1
+ [4] mgcv_1.8-29
+ [5] nlme_3.1-141
+ [6] goseq_1.34.1
+ [7] geneLenDataBase_1.18.0
+ [8] BiasedUrn_1.07
+ [9] gridExtra_2.3
+[10] TxDb.Dmelanogaster.UCSC.dm6.ensGene_3.4.4
+[11] GenomicFeatures_1.34.8
+[12] pheatmap_1.0.12
+[13] reshape2_1.4.3
+[14] limma_3.38.3
+[15] fdrtool_1.2.15
+[16] EDASeq_2.16.3
+[17] ShortRead_1.40.0
+[18] GenomicAlignments_1.18.1
+[19] Rsamtools_1.34.1
+[20] Biostrings_2.50.2
+[21] XVector_0.22.0
+[22] biomaRt_2.38.0
+[23] genefilter_1.64.0
+[24] topGO_2.34.0
+[25] SparseM_1.77
+[26] GO.db_3.7.0
+[27] graph_1.60.0
+[28] stringr_1.4.0
+[29] RColorBrewer_1.1-2
+[30] gplots_3.0.1.1
+[31] DESeq2_1.22.2
+[32] SummarizedExperiment_1.12.0
+[33] DelayedArray_0.8.0
+[34] BiocParallel_1.16.6
+[35] matrixStats_0.55.0
+[36] GenomicRanges_1.34.0
+[37] GenomeInfoDb_1.18.2
+[38] dplyr_0.8.3
+[39] plyr_1.8.4
+[40] ggplot2_3.2.1
+[41] geneplotter_1.60.0
+[42] annotate_1.60.1
+[43] XML_3.98-1.20
+[44] AnnotationDbi_1.44.0
+[45] IRanges_2.16.0
+[46] S4Vectors_0.20.1
+[47] lattice_0.20-41
+[48] Biobase_2.42.0
+[49] BiocGenerics_0.28.0
 
 loaded via a namespace (and not attached):
- [1] colorspace_1.4-1       hwriter_1.3.2          htmlTable_1.13.2      
- [4] base64enc_0.1-3        rstudioapi_0.10        bit64_0.9-7           
- [7] splines_3.5.0          R.methodsS3_1.7.1      DESeq_1.34.1          
-[10] knitr_1.25             zeallot_0.1.0          Formula_1.2-3         
-[13] gridBase_0.4-7         cluster_2.1.0          R.oo_1.22.0           
-[16] shiny_1.3.2            compiler_3.5.0         httr_1.4.1            
-[19] backports_1.1.4        assertthat_0.2.1       Matrix_1.2-17         
-[22] lazyeval_0.2.2         later_0.8.0            acepack_1.4.1         
-[25] htmltools_0.3.6        prettyunits_1.0.2      tools_3.5.0           
-[28] igraph_1.2.4.1         gtable_0.3.0           glue_1.3.1            
-[31] GenomeInfoDbData_1.2.0 Rcpp_1.0.2             vctrs_0.2.0           
-[34] gdata_2.18.0           rtracklayer_1.42.2     xfun_0.9              
-[37] mime_0.7               gtools_3.8.1           zlibbioc_1.28.0       
-[40] scales_1.0.0           aroma.light_3.12.0     promises_1.0.1        
-[43] hms_0.5.1              memoise_1.1.0          rpart_4.1-15          
-[46] latticeExtra_0.6-28    stringi_1.4.3          RSQLite_2.1.2         
-[49] checkmate_1.9.4        caTools_1.17.1.2       rlang_0.4.0           
-[52] pkgconfig_2.0.3        bitops_1.0-6           purrr_0.3.2           
-[55] htmlwidgets_1.3        bit_1.1-14             tidyselect_0.2.5      
-[58] magrittr_1.5           R6_2.4.0               Hmisc_4.2-0           
-[61] DBI_1.0.0              pillar_1.4.2           foreign_0.8-72        
-[64] withr_2.1.2            survival_2.44-1.1      RCurl_1.95-4.12       
-[67] nnet_7.3-12            tibble_2.1.3           crayon_1.3.4          
-[70] KernSmooth_2.23-15     progress_1.2.2         locfit_1.5-9.1        
-[73] grid_3.5.0             data.table_1.12.2      blob_1.2.0            
-[76] digest_0.6.21          xtable_1.8-4           httpuv_1.5.2          
-[79] R.utils_2.9.0          munsell_0.5.0   
+ [1] colorspace_1.4-1       hwriter_1.3.2          htmlTable_1.13.2
+ [4] base64enc_0.1-3        rstudioapi_0.11        bit64_0.9-7
+ [7] feather_0.3.5          splines_3.5.0          R.methodsS3_1.7.1
+[10] DESeq_1.34.1           knitr_1.28             Formula_1.2-3
+[13] gridBase_0.4-7         cluster_2.1.0          R.oo_1.22.0
+[16] shiny_1.3.2            compiler_3.5.0         httr_1.4.1
+[19] backports_1.1.4        assertthat_0.2.1       Matrix_1.2-18
+[22] lazyeval_0.2.2         later_0.8.0            acepack_1.4.1
+[25] htmltools_0.4.0        prettyunits_1.0.2      tools_3.5.0
+[28] igraph_1.2.4.1         gtable_0.3.0           glue_1.4.1
+[31] GenomeInfoDbData_1.2.0 Rcpp_1.0.5             vctrs_0.3.4
+[34] gdata_2.18.0           rtracklayer_1.42.2     xfun_0.12
+[37] mime_0.9               lifecycle_0.2.0        gtools_3.8.1
+[40] zlibbioc_1.28.0        scales_1.0.0           aroma.light_3.12.0
+[43] promises_1.0.1         hms_0.5.1              memoise_1.1.0
+[46] rpart_4.1-15           latticeExtra_0.6-28    stringi_1.4.3
+[49] RSQLite_2.1.2          checkmate_2.0.0        caTools_1.17.1.2
+[52] rlang_0.4.7            pkgconfig_2.0.3        bitops_1.0-6
+[55] AUCell_1.4.1           purrr_0.3.4            htmlwidgets_1.5.1
+[58] bit_1.1-14             tidyselect_1.1.0       GSEABase_1.44.0
+[61] magrittr_1.5           R6_2.4.0               generics_0.0.2
+[64] Hmisc_4.3-1            DBI_1.0.0              pillar_1.4.2
+[67] foreign_0.8-72         withr_2.1.2            survival_3.1-8
+[70] RCurl_1.95-4.12        nnet_7.3-12            tibble_2.1.3
+[73] crayon_1.3.4           KernSmooth_2.23-15     progress_1.2.2
+[76] locfit_1.5-9.1         grid_3.5.0             data.table_1.12.8
+[79] blob_1.2.0             digest_0.6.25          xtable_1.8-4
+[82] httpuv_1.5.2           R.utils_2.9.0          munsell_0.5.0
